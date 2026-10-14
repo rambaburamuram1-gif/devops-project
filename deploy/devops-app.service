@@ -1,0 +1,12 @@
+[Unit]
+Description=DevOps Flask App
+After=network.target
+
+[Service]
+User=rambabu
+WorkingDirectory=/home/rambabu/projects/devops-project/app
+ExecStart=/home/rambabu/projects/devops-project/app/venv/bin/gunicorn -b 127.0.0.1:8000 app:app
+Restart=always
+
+[Install]
+WantedBy=multi-user.target
